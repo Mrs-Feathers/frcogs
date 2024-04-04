@@ -3,14 +3,14 @@ from discord.ext import commands
 import aiohttp
 import os
 
-class FRIDPlugin(commands.Cog):
+class FRIDPlugin:
     """Fetch and display FR ID Card."""
 
-    def __init__(self, bot: commands.Bot) -> None:
+    def __init__(self, bot) -> None:
         self.bot = bot
 
     @commands.command(name="id")
-    async def fetch_id_card(self, ctx: commands.Context, username: str):
+    async def fetch_id_card(self, ctx, username: str):
         """Fetches FR ID Card for a given username."""
         api_url = f"https://api.feathersfirst.local:8080/?username={username}"
         async with aiohttp.ClientSession() as session:
