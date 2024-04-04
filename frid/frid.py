@@ -9,8 +9,8 @@ class FRIDPlugin(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
         self.bot = bot
 
-    @commands.slash_command(name="id")
-    async def fetch_id_card(self, ctx: discord.ApplicationContext, username: str):
+    @commands.command(name="id")
+    async def fetch_id_card(self, ctx: commands.Context, username: str):
         """Fetches FR ID Card for a given username."""
         api_url = f"https://api.feathersfirst.local:8080/?username={username}"
         async with aiohttp.ClientSession() as session:
@@ -22,8 +22,8 @@ class FRIDPlugin(commands.Cog):
                             if not chunk:
                                 break
                             f.write(chunk)
-                    await ctx.respond(file=discord.File("/tmp/image.png"))
+                    await ctx.send(file=discord.File("/tmp/image.png"))
                     os.remove("/tmp/image.png")
                 else:
-                    await ctx.respond("Failed to fetch FR ID Card. Please try again later.", ephemeral=True)
+                    await ctx.send("Failed to fetch FR ID Card. Please try again later.", delete_after=10)
 
