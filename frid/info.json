@@ -1,0 +1,25 @@
+{
+    "author": [
+        "Furry Refuge"
+    ],
+    "name": "FR ID Card",
+    "install_msg": "FRID API INSTALLED",
+    "description": "Get your FR ID Card!",
+    "short": "Get your FR ID Card!",
+    "hidden": false,
+    "min_bot_version": "3.5.3",
+    "tags": [
+        "achievement"
+    ],
+    "permissions": [
+        "embed_links"
+    ],
+    "requirements": ["emoji"],
+    "min_python_version": [
+        3,
+        9,
+        0
+    ],
+    "end_user_data_statement": "This cog does not save anything, it merely uses an API request to the FR Database.",
+    "type": "COG"
+}

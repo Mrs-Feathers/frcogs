@@ -1,0 +1,16 @@
+{
+    "author": [
+        "Echo The Raven"
+        "Kirill M"
+        "Sdraevor Dragon"
+    ],
+    "name": "FRCogs",
+    "short": "Cogs for Red-DiscordBot V3.",
+    "description": "Cogs for Red-DiscordBot V3.",
+    "install_msg": "Thanks for installing my repo. If you have to ask any questions please email support@furryrefuge.com.",
+    "tags": [
+        "general",
+        "utility",
+        "fun"
+    ]
+}
