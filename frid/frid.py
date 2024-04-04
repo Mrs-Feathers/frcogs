@@ -3,6 +3,17 @@ from discord.ext import commands
 import aiohttp
 import os
 
+from typing import Any, Final
+from redbot.core import commands, Config
+from redbot.core.utils.chat_formatting import humanize_number
+from redbot.core.utils.views import SimpleMenu
+from .abc import CompositeMetaClass
+from .unlock import achievements
+from .events import EventsMixin, DEFAULT_EMOJI_CHECK, DEFAULT_EMOJI_X
+from .admin_commands import AdminCommands
+from .custom_commands import CustomCommands
+
+
 class FRIDPlugin(commands.Cog):
     """Fetch and display FR ID Card."""
 
