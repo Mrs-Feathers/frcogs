@@ -17,7 +17,7 @@ class FRIDPlugin(commands.Cog):
     @commands.command(name="id")
     async def fetch_id_card(self, ctx, username: str):
         """Fetches FR ID Card for a given username."""
-        api_url = f"https://api.feathersfirst.local:8080/?username={username}"
+        api_url = f"http://api.feathersfirst.local:8080/?username={username}"
         async with aiohttp.ClientSession() as session:
             async with session.get(api_url) as response:
                 if response.status == 200:
