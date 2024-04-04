@@ -3,7 +3,7 @@ from discord.ext import commands
 import aiohttp
 import os
 
-class FRIDPlugin:
+class FRIDPlugin(commands.Cog):
     """Fetch and display FR ID Card."""
 
     def __init__(self, bot) -> None:
