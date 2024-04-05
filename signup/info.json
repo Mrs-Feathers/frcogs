@@ -9,7 +9,8 @@
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "signup"
+        "signup",
+        "invite"
     ],
     "permissions": [
         "embed_links"
