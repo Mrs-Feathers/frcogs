@@ -8,7 +8,7 @@ from redbot.core.utils.chat_formatting import humanize_number
 from redbot.core.utils.views import SimpleMenu
 
 
-class FRIDPlugin(commands.Cog):
+class FRSignup(commands.Cog):
     """Deliver Invite link."""
 
     def __init__(self, bot) -> None:
