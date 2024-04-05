@@ -2,14 +2,14 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR ID Card",
+    "name": "FR Signup Invite",
     "install_msg": "FRID API INSTALLED",
-    "description": "Get your FR ID Card!",
-    "short": "Get your FR ID Card!",
+    "description": "Get invited to make an FR account!",
+    "short": "Get invited to make an FR account!",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "achievement"
+        "signup"
     ],
     "permissions": [
         "embed_links"
