@@ -27,8 +27,9 @@ To install any cog you want:
 ## Cogs on this repo: <br>
 | Cogs list | Description | Version | Author | Stable |
 |:---:|---|:---:|:---:|:---:|
-| frid | Request furry refuge id card. | 1 | echo | ✅ |
-| signup | give sign up link for FR account. | 1 | echo | ✅ |
+| frid | Request furry refuge id card. | 1 | Mrs Feathers | ✅ |
+| signup | give sign up link for FR account. | 1 | Mrs Feathers | ✅ |
+| getuser | admin command specific to FR . | 1 | Mrs Feathers | ✅ |
 
 ## Credits:
 - Kirill
