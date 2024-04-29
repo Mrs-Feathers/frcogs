@@ -32,7 +32,7 @@ class GetUser(commands.Cog):
 
         headers = {
             'accept': 'application/json',
-            'authorization': 'Bearer ***REMOVED***'
+            'authorization': 'Bearer '
         }
 
         async with aiohttp.ClientSession() as session:
