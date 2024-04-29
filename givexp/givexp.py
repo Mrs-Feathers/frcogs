@@ -26,11 +26,9 @@ class GiveXP(commands.Cog):
     @commands.is_owner()
     async def give_xp(self, ctx, *, args: str):
         """Give XP to a user."""
-         # Output arguments for debugging
         try:
             amount, username = map(str.strip, args.split(maxsplit=1))
             amount = int(amount)
-            
         except ValueError:
             await ctx.send("Invalid input. Please use the format: !givexp <amount> <username>")
             return
@@ -45,20 +43,22 @@ class GiveXP(commands.Cog):
         }
         url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{username}%22%7D"
 
-        await ctx.send(f"Debug: url {url}") 
+        await ctx.send(f"Debug: url {url}")
 
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
+                    await ctx.send(f"Debug: data {data}")
 
                     if data['results']:
                         user = data['results'][0]
-                        current_xp = int(user['attributes']['xp']) if 'xp' in user['attributes'] else 0
+                        user_attributes = user['attributes']
+                        current_xp = int(user_attributes['xp']) if 'xp' in user_attributes else 0
                         new_xp = current_xp + amount
+                        user_attributes['xp'] = str(new_xp)
                         update_url = f"https://auth.furryrefuge.com/api/v3/core/users/{user['pk']}/"
-                        update_data = {'attributes': {'xp': str(new_xp)}}
-                        async with session.patch(update_url, json=update_data, headers=headers) as update_response:
+                        async with session.patch(update_url, json={'attributes': user_attributes}, headers=headers) as update_response:
                             if update_response.status == 200:
                                 await ctx.send(f"XP updated successfully for {username}. New XP: {new_xp}")
                             else:
@@ -67,4 +67,5 @@ class GiveXP(commands.Cog):
                         await ctx.send("No user found with the provided username.")
                 else:
                     await ctx.send(f"Failed to fetch user data: {response.status} {response.reason}")
+
 
