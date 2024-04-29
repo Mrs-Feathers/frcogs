@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR GetUser",
-    "install_msg": "GETUSER API INSTALLED",
-    "description": "Get information on a user",
-    "short": "Get information on a user",
+    "name": "FR Give XP",
+    "install_msg": "GIVEXP API INSTALLED",
+    "description": "Give xp to a discord user",
+    "short": "Give xp to a discord user",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
         "accounts",
-        "amdmin"
+        "xp"
     ],
     "permissions": [
         "embed_links"
