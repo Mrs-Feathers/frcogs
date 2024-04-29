@@ -51,7 +51,6 @@ class GiveXP(commands.Cog):
             async with session.get(url, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
-                    await ctx.send(f"Debug: data {data}")
 
                     if data['results']:
                         user = data['results'][0]
