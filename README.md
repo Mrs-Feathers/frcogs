@@ -30,6 +30,7 @@ To install any cog you want:
 | frid | Request furry refuge id card. | 1 | Mrs Feathers | ✅ |
 | signup | give sign up link for FR account. | 1 | Mrs Feathers | ✅ |
 | getuser | admin command specific to FR . | 1 | Mrs Feathers | ✅ |
+| givexp | admin command specific to FR . | 1 | Mrs Feathers | ✅ |
 
 ## Credits:
 - Kirill
