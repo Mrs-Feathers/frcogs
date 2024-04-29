@@ -1,7 +1,7 @@
-from .getuser import GetUser
+from .givexp import GiveXP
 
-__red_end_user_data_statement__ = "allows admin to get more info on a user"
+__red_end_user_data_statement__ = "Give xp to a discord user"
 
 
 async def setup(bot):
-    await bot.add_cog(GetUser(bot))
+    await bot.add_cog(GiveXP(bot))
