@@ -24,8 +24,15 @@ class GiveXP(commands.Cog):
 
     @commands.command(name="givexp")
     @commands.is_owner()
-    async def give_xp(self, ctx, amount: int, username: str):
+    async def give_xp(self, ctx, *, args: str):
         """Give XP to a user."""
+        try:
+            amount, username = map(str.strip, args.split(maxsplit=1))
+            amount = int(amount)
+        except ValueError:
+            await ctx.send("Invalid input. Please use the format: !givexp <amount> <username>")
+            return
+
         token = await self.config.token()
         if not token:
             await ctx.send("API token is not set. Use givexpsettoken command to set the API token.")
