@@ -30,7 +30,7 @@ class GiveXP(commands.Cog):
         try:
             amount, username = map(str.strip, args.split(maxsplit=1))
             amount = int(amount)
-            await ctx.send(f"Debug: Received arguments - amount {amount} user {username}") 
+            
         except ValueError:
             await ctx.send("Invalid input. Please use the format: !givexp <amount> <username>")
             return
@@ -45,10 +45,14 @@ class GiveXP(commands.Cog):
         }
         url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{username}%22%7D"
 
+        await ctx.send(f"Debug: url {url}") 
+
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
+                    await ctx.send(f"Debug: data {data}")
+
                     if data['results']:
                         user = data['results'][0]
                         current_xp = int(user['attributes']['xp']) if 'xp' in user['attributes'] else 0
