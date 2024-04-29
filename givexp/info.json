@@ -1,0 +1,26 @@
+{
+    "author": [
+        "Furry Refuge"
+    ],
+    "name": "FR GetUser",
+    "install_msg": "GETUSER API INSTALLED",
+    "description": "Get information on a user",
+    "short": "Get information on a user",
+    "hidden": false,
+    "min_bot_version": "3.5.3",
+    "tags": [
+        "accounts",
+        "amdmin"
+    ],
+    "permissions": [
+        "embed_links"
+    ],
+    "requirements": ["emoji"],
+    "min_python_version": [
+        3,
+        9,
+        0
+    ],
+    "end_user_data_statement": "This cog does not save anything, it merely uses an API request to the FR Database.",
+    "type": "COG"
+}
