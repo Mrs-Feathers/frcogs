@@ -26,10 +26,11 @@ class GiveXP(commands.Cog):
     @commands.is_owner()
     async def give_xp(self, ctx, *, args: str):
         """Give XP to a user."""
-        await ctx.send(f"Debug: Received arguments - {args}")  # Output arguments for debugging
+         # Output arguments for debugging
         try:
             amount, username = map(str.strip, args.split(maxsplit=1))
             amount = int(amount)
+            await ctx.send(f"Debug: Received arguments - amount {amount} user {username}") 
         except ValueError:
             await ctx.send("Invalid input. Please use the format: !givexp <amount> <username>")
             return
