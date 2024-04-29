@@ -26,6 +26,7 @@ class GiveXP(commands.Cog):
     @commands.is_owner()
     async def give_xp(self, ctx, *, args: str):
         """Give XP to a user."""
+        await ctx.send(f"Debug: Received arguments - {args}")  # Output arguments for debugging
         try:
             amount, username = map(str.strip, args.split(maxsplit=1))
             amount = int(amount)
@@ -37,7 +38,6 @@ class GiveXP(commands.Cog):
         if not token:
             await ctx.send("API token is not set. Use givexpsettoken command to set the API token.")
             return
-
         headers = {
             'accept': 'application/json',
             'authorization': f'Bearer {token}'
@@ -63,3 +63,4 @@ class GiveXP(commands.Cog):
                         await ctx.send("No user found with the provided username.")
                 else:
                     await ctx.send(f"Failed to fetch user data: {response.status} {response.reason}")
+
