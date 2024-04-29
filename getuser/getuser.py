@@ -13,10 +13,25 @@ class GetUser(commands.Cog):
 
     def __init__(self, bot) -> None:
         self.bot = bot
+        self.config = Config.get_conf(self, identifier=1234567890, force_registration=True)
+        self.config.register_global(token=None)
+
+    @commands.command(name="getusersettoken")
+    @commands.is_owner()
+    async def set_token(self, ctx, token: str):
+        """Set the API token for fetching user data."""
+        await self.config.token.set(token)
+        await ctx.send("Token set successfully.")
 
     @commands.command(name="getuser")
+    @commands.has_permissions(administrator=True)
     async def get_user(self, ctx, platform, username):
         """Fetch user information from different platforms."""
+        token = await self.config.token()
+        if not token:
+            await ctx.send("API token is not set. Use `/getusersettoken` to set the token.")
+            return
+
         if platform in ["tg", "telegram"]:
             username = f"@{username}" if not username.startswith('@') else username
             platform = "tgname"
@@ -32,7 +47,7 @@ class GetUser(commands.Cog):
 
         headers = {
             'accept': 'application/json',
-            'authorization': 'Bearer '
+            'authorization': f'Bearer {token}'
         }
 
         async with aiohttp.ClientSession() as session:
