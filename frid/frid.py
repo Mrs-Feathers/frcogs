@@ -16,7 +16,7 @@ class FRIDPlugin(commands.Cog):
 
     @commands.command(name="id")
     async def fetch_id_card(self, ctx, username: str = None):
-        """Fetches FR ID Card for a given Discord username."""
+        """Fetches FR ID Card for a given Discord username. Defaults to discord name"""
         if username is None:
             username = ctx.author.name
         lookup_url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22tgname%22%3A+%22{username}%22%7D"
