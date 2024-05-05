@@ -41,7 +41,7 @@ class GiveXP(commands.Cog):
             'accept': 'application/json',
             'authorization': f'Bearer {token}'
         }
-        url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{username}%22%7D"
+        url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{username.name}%22%7D"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(url, headers=headers) as response:
