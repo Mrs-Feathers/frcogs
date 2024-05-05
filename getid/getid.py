@@ -1,5 +1,11 @@
 import discord
 from discord.ext import commands
+import aiohttp
+import os
+
+from redbot.core import commands, Config
+from redbot.core.utils.chat_formatting import humanize_number
+from redbot.core.utils.views import SimpleMenu
 
 class UserInfoPlugin(commands.Cog):
     """Plugin to fetch and display Discord user information."""
