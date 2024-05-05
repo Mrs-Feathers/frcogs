@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Give XP",
-    "install_msg": "GIVEXP API INSTALLED",
-    "description": "Give xp to a discord user",
-    "short": "Give xp to a discord user",
+    "name": "FR Karma",
+    "install_msg": "KARMA API INSTALLED",
+    "description": "Give karma to a discord user",
+    "short": "Give karma to a discord user",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "accounts",
-        "xp"
+        "karma",
+        "+1"
     ],
     "permissions": [
         "embed_links"
