@@ -31,6 +31,7 @@ To install any cog you want:
 | signup | give sign up link for FR account. | 1 | Mrs Feathers | ✅ |
 | getuser | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
 | givexp | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
+| karma | give users karma. specific to FR . | 2 | Mrs Feathers | ✅ |
 
 ## Credits:
 - Kirill
