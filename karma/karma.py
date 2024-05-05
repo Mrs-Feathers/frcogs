@@ -50,7 +50,7 @@ class KarmaPlugin(commands.Cog):
 
             # Apply rate limiting
             if check_rate_limit(giver_user.id, ctx):
-                lookup_url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22tgname%22%3A+%22{target_user.name}%22%7D"
+                lookup_url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{target_user.name}%22%7D"
                 headers = {
                     'accept': 'application/json',
                     'authorization': 'Bearer ***REMOVED***'
