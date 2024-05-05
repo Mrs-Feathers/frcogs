@@ -1,68 +1,25 @@
 import discord
 from discord.ext import commands
-import aiohttp
-import os
 
-from redbot.core import commands, Config
-from redbot.core.utils.chat_formatting import humanize_number
-from redbot.core.utils.views import SimpleMenu
-
-class GiveXP(commands.Cog):
-    """Give XP to a user based on Discord username"""
+class UserInfoPlugin(commands.Cog):
+    """Plugin to fetch and display Discord user information."""
 
     def __init__(self, bot) -> None:
         self.bot = bot
-        self.config = Config.get_conf(self, identifier=1234567890, force_registration=True)
-        self.config.register_global(token=None)
 
-    @commands.command(name="givexpsettoken")
-    @commands.is_owner()
-    async def set_token(self, ctx, token: str):
-        """Set the API token for fetching user data."""
-        await self.config.token.set(token)
-        await ctx.send("Token set successfully.")
+    @commands.command(name="getid")
+    async def get_user_info(self, ctx, *, user: discord.User = None):
+        """Fetches information about a Discord user."""
+        if user is None:
+            user = ctx.author  # Default to the user who invoked the command if no user is specified
 
-    @commands.command(name="givexp")
-    @commands.is_owner()
-    async def give_xp(self, ctx, *, args: str):
-        """Give XP to a user."""
-        try:
-            amount, username = map(str.strip, args.split(maxsplit=1))
-            amount = int(amount)
-        except ValueError:
-            await ctx.send("Invalid input. Please use the format: !givexp <amount> <username>")
-            return
+        embed = discord.Embed(title="User Information", color=discord.Color.blue())
+        embed.add_field(name="Name", value=user.name, inline=True)
+        embed.add_field(name="Username", value=user.display_name, inline=True)
+        embed.add_field(name="User ID", value=user.id, inline=True)
+        embed.add_field(name="Account Created", value=user.created_at.strftime("%Y-%m-%d %H:%M:%S"), inline=True)
+        embed.add_field(name="Bot?", value=user.bot, inline=True)
+        embed.set_thumbnail(url=user.avatar_url)
 
-        token = await self.config.token()
-        if not token:
-            await ctx.send("API token is not set. Use givexpsettoken command to set the API token.")
-            return
-        headers = {
-            'accept': 'application/json',
-            'authorization': f'Bearer {token}'
-        }
-        url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{username}%22%7D"
-
-        async with aiohttp.ClientSession() as session:
-            async with session.get(url, headers=headers) as response:
-                if response.status == 200:
-                    data = await response.json()
-
-                    if data['results']:
-                        user = data['results'][0]
-                        user_attributes = user['attributes']
-                        current_xp = int(user_attributes['xp']) if 'xp' in user_attributes else 0
-                        new_xp = current_xp + amount
-                        user_attributes['xp'] = str(new_xp)
-                        update_url = f"https://auth.furryrefuge.com/api/v3/core/users/{user['pk']}/"
-                        async with session.patch(update_url, json={'attributes': user_attributes}, headers=headers) as update_response:
-                            if update_response.status == 200:
-                                await ctx.send(f"XP updated successfully for {username}. New XP: {new_xp}")
-                            else:
-                                await ctx.send(f"Failed to update user data: {update_response.status} {update_response.reason}")
-                    else:
-                        await ctx.send("No user found with the provided username.")
-                else:
-                    await ctx.send(f"Failed to fetch user data: {response.status} {response.reason}")
-
+        await ctx.send(embed=embed)
 
