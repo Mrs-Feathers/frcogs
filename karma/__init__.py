@@ -1,7 +1,7 @@
-from .givexp import GiveXP
+from .karma import KarmaPlugin
 
-__red_end_user_data_statement__ = "Give xp to a discord user"
+__red_end_user_data_statement__ = "Give karma to a discord user"
 
 
 async def setup(bot):
-    await bot.add_cog(GiveXP(bot))
+    await bot.add_cog(KarmaPlugin(bot))
