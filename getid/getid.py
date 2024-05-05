@@ -28,3 +28,4 @@ class UserInfoPlugin(commands.Cog):
 
         await ctx.send(embed=embed)
         await ctx.send(f"Command invoked by: {ctx.author}")
+        await ctx.send(f"User argument given: {user} test: {user.name}")
