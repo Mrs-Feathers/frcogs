@@ -35,6 +35,15 @@ class KarmaPlugin(commands.Cog):
 
     def __init__(self, bot) -> None:
         self.bot = bot
+        self.config = Config.get_conf(self, identifier=1234567890, force_registration=True)
+        self.config.register_global(token="")
+
+    @commands.command(name="karmasettoken")
+    @commands.is_owner()
+    async def set_token(self, ctx, token: str):
+        """Set the API token for fetching user data."""
+        await self.config.token.set(token)
+        await ctx.send("Token set successfully.")
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -50,10 +59,11 @@ class KarmaPlugin(commands.Cog):
 
             # Apply rate limiting
             if check_rate_limit(giver_user.id, ctx):
+                token = await self.config.token()
                 lookup_url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22discname%22%3A+%22{target_user.name}%22%7D"
                 headers = {
                     'accept': 'application/json',
-                    'authorization': 'Bearer ***REMOVED***'
+                    'authorization': f'Bearer {token}'
                 }
 
                 async with aiohttp.ClientSession() as session:
@@ -77,4 +87,3 @@ class KarmaPlugin(commands.Cog):
                                 await ctx.send("It seems like the target user's Furry Refuge account is not linked. Please check and try again.")
                         else:
                             await ctx.send("Failed to lookup user information. Please try again later.", delete_after=10)
-
