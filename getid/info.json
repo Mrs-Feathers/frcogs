@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Give XP",
-    "install_msg": "GIVEXP API INSTALLED",
-    "description": "Give xp to a discord user",
-    "short": "Give xp to a discord user",
+    "name": "Debug & Test",
+    "install_msg": "DEBUG API INSTALLED",
+    "description": "Test to get debug info from user",
+    "short": "Test to get debug info from user",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "accounts",
-        "xp"
+        "debug",
+        "test"
     ],
     "permissions": [
         "embed_links"
