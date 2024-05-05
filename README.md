@@ -32,6 +32,7 @@ To install any cog you want:
 | getuser | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
 | givexp | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
 | karma | give users karma. specific to FR . | 1 | Mrs Feathers | ✅ |
+| getid | Simple debug command. | 1 | Mrs Feathers | ✅ |
 
 ## Credits:
 - Kirill
