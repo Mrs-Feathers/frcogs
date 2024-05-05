@@ -27,10 +27,10 @@ To install any cog you want:
 ## Cogs on this repo: <br>
 | Cogs list | Description | Version | Author | Stable |
 |:---:|---|:---:|:---:|:---:|
-| frid | Request furry refuge id card. | 1 | Mrs Feathers | ✅ |
+| frid | Request furry refuge id card. | 2 | Mrs Feathers | ✅ |
 | signup | give sign up link for FR account. | 1 | Mrs Feathers | ✅ |
-| getuser | admin command specific to FR . | 1 | Mrs Feathers | ✅ |
-| givexp | admin command specific to FR . | 1 | Mrs Feathers | ✅ |
+| getuser | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
+| givexp | admin command specific to FR . | 2 | Mrs Feathers | ✅ |
 
 ## Credits:
 - Kirill
