@@ -27,4 +27,4 @@ class UserInfoPlugin(commands.Cog):
         embed.add_field(name="Bot?", value=user.bot, inline=True)
 
         await ctx.send(embed=embed)
-
+        await ctx.send(f"Command invoked by: {ctx.author}")
