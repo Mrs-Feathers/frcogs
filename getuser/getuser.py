@@ -42,7 +42,8 @@ class GetUser(commands.Cog):
         elif platform == "fr":
             url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22tgname%22%3A+%22%40Mrs_Feathers%22%7D&username={username}"
         else:
-            await ctx.send('Please specify a valid platform: "tg" for Telegram, "disc" for Discord, or "fr" for Furry Refuge.')
+            platform = "discname"
+            url = f"https://auth.furryrefuge.com/api/v3/core/users/?attributes=%7B%22{platform}%22%3A+%22{username}%22%7D"
             return
 
         headers = {
