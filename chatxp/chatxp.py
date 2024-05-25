@@ -55,7 +55,7 @@ class ChatXP(commands.Cog):
                                     if update_response.status == 200:
                                         last_post_time[username] = current_time
                                         await self.config.last_post_time.set(last_post_time)
-                                        await message.channel.send(f"DEBUG: {username} has gained 1 XP! They now have {new_xp} XP.")
+                                        """await message.channel.send(f"DEBUG: {username} has gained 1 XP! They now have {new_xp} XP.")"""
                                     else:
                                         print(f"Failed to update user data: {update_response.status} {update_response.reason}")
                             else:
