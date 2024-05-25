@@ -2,14 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Signup Invite",
-    "install_msg": "FRID API INSTALLED",
-    "description": "Get invited to make an FR account!",
-    "short": "Get invited to make an FR account!",
+    "name": "FR Chat XP",
+    "install_msg": "CHAT XP INSTALLED",
+    "description": "Get XP once an hour from chatting!",
+    "short": "Get XP once an hour from chatting!",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "signup"
+        "xp",
+        "chat"
     ],
     "permissions": [
         "embed_links"
