@@ -6,7 +6,7 @@ import time
 
 from redbot.core import commands, Config
 
-class GiveXP(commands.Cog):
+class ChatXP(commands.Cog):
     """Give XP to a user based on Discord username"""
 
     def __init__(self, bot) -> None:
