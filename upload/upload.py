@@ -19,7 +19,7 @@ class Upload(commands.Cog):
     @commands.command(name="upload")
     async def upload(self, ctx):
         """Upload using the user's username as a token."""
-        if isinstance(ctx.channel, discord.DMChannel):
+        if not isinstance(ctx.channel, discord.TextChannel):
             username = ctx.author.name
             token = base64.b64encode(username.encode()).decode()
             url = f"https://photovoter.furryrefuge.com/upload.php?token={token}"
