@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Karma",
-    "install_msg": "KARMA API INSTALLED",
-    "description": "Give karma to a discord user",
-    "short": "Give karma to a discord user",
+    "name": "Photovoter token",
+    "install_msg": "Photovoter token API INSTALLED",
+    "description": "Get a link to upload a photo",
+    "short": "Get a link to upload a photo",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "karma",
-        "+1"
+        "photovoter",
+        "photos"
     ],
     "permissions": [
         "embed_links"
