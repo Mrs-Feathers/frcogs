@@ -17,9 +17,10 @@ class Upload(commands.Cog):
         self.config.register_global(token=None)
 
     @commands.command(name="upload")
-    async def upload(self, ctx, username: str):
+    async def upload(self, ctx):
         """Upload using the user's username as a token."""
         if isinstance(ctx.channel, discord.DMChannel):
+            username = ctx.author.name
             token = base64.b64encode(username.encode()).decode()
             url = f"https://photovoter.furryrefuge.com/upload.php?token={token}"
             await ctx.send(f"DO NOT SHARE THIS LINK! This is your token: {url}")
