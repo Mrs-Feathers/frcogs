@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Signup Invite",
-    "install_msg": "FRID API INSTALLED",
-    "description": "Get invited to make an FR account!",
-    "short": "Get invited to make an FR account!",
+    "name": "FR profile editing",
+    "install_msg": "profile editing API INSTALLED",
+    "description": "Get a link to edit your FR Profile!",
+    "short": "Get a link to edit your FR Profile!",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "signup",
-        "invite"
+        "edit",
+        "profile"
     ],
     "permissions": [
         "embed_links"
