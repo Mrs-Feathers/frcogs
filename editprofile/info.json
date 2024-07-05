@@ -1,0 +1,26 @@
+{
+    "author": [
+        "Furry Refuge"
+    ],
+    "name": "FR Signup Invite",
+    "install_msg": "FRID API INSTALLED",
+    "description": "Get invited to make an FR account!",
+    "short": "Get invited to make an FR account!",
+    "hidden": false,
+    "min_bot_version": "3.5.3",
+    "tags": [
+        "signup",
+        "invite"
+    ],
+    "permissions": [
+        "embed_links"
+    ],
+    "requirements": ["emoji"],
+    "min_python_version": [
+        3,
+        9,
+        0
+    ],
+    "end_user_data_statement": "This cog does not save anything, it merely uses an API request to the FR Database.",
+    "type": "COG"
+}
