@@ -17,4 +17,4 @@ class EventLink(commands.Cog):
     @commands.command(name="events")
     async def events(self, ctx):
         """Deliver Events Calendar link."""
-        await ctx.send("Check out FR Events at: https://furryrefuge.com/events", delete_after=10)
+        await ctx.send("Check out FR Events at: https://furryrefuge.com/events")
