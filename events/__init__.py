@@ -1,7 +1,7 @@
-from .editprofile import EditProfile
+from .events import EventLink
 
-__red_end_user_data_statement__ = "This cog allows you to request an link to edit your Furry Refuge account profile!"
+__red_end_user_data_statement__ = "Check out our events!"
 
 
 async def setup(bot):
-    await bot.add_cog(EditProfile(bot))
+    await bot.add_cog(EventLink(bot))
