@@ -2,15 +2,15 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR profile editing",
-    "install_msg": "profile editing API INSTALLED",
-    "description": "Get a link to edit your FR Profile!",
-    "short": "Get a link to edit your FR Profile!",
+    "name": "privacy policy.",
+    "install_msg": "privacy API INSTALLED",
+    "description": "Deliver link to privacy policy.",
+    "short": "GDeliver link to privacy policy.",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
-        "edit",
-        "profile"
+        "privacy",
+        "policy"
     ],
     "permissions": [
         "embed_links"
