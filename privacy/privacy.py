@@ -17,4 +17,4 @@ class PrivacyPolicy(commands.Cog):
     @commands.command(name="privacy")
     async def privacy(self, ctx):
         """Deliver link to privacy policy."""
-        await ctx.send("Furry Refuge Privacy Policy: https://furryrefuge.com/privacy-policy", delete_after=10)
+        await ctx.send("Furry Refuge Privacy Policy: https://furryrefuge.com/privacy-policy")
