@@ -1,0 +1,26 @@
+{
+    "author": [
+        "Furry Refuge"
+    ],
+    "name": "FR profile editing",
+    "install_msg": "profile editing API INSTALLED",
+    "description": "Get a link to edit your FR Profile!",
+    "short": "Get a link to edit your FR Profile!",
+    "hidden": false,
+    "min_bot_version": "3.5.3",
+    "tags": [
+        "edit",
+        "profile"
+    ],
+    "permissions": [
+        "embed_links"
+    ],
+    "requirements": ["emoji"],
+    "min_python_version": [
+        3,
+        9,
+        0
+    ],
+    "end_user_data_statement": "This cog does not save anything, it merely uses an API request to the FR Database.",
+    "type": "COG"
+}
