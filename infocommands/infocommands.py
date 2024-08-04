@@ -16,12 +16,12 @@ class FRInfo(commands.Cog):
 
     @commands.command(name="signup")
     async def signup(self, ctx):
-        """Deliver Invite link."""
+        """Get invite link to sign up for an FR account."""
         await ctx.send("Your Furry Refuge account invite link is: https://auth.furryrefuge.com/if/flow/enrollment-invitation/?itoken=62bd2e38-b67b-46d2-9118-7636d54d48c6")
 
     @commands.command(name="support")
     async def support(self, ctx):
-        """Deliver Invite link."""
+        """Need support? Contact us!"""
         await ctx.send("!!!Support is always here to help, send an email to support@furryrefuge.com including everything you think is relivant and we will try to help!")
 
     @commands.command(name="privacy")
@@ -31,10 +31,15 @@ class FRInfo(commands.Cog):
 
     @commands.command(name="events")
     async def events(self, ctx):
-        """Deliver Events Calendar link."""
+        """Check out a link to our Events Calendar!"""
         await ctx.send("Check out FR Events at: https://furryrefuge.com/events")
 
     @commands.command(name="editprofile")
     async def editprofile(self, ctx):
-        """Deliver Profile Editing link."""
+        """Profile Editing link on FR website."""
         await ctx.send("Your furry refuge account profile editing link is: https://auth.furryrefuge.com/if/user/#/settings", delete_after=60)
+
+    @commands.command(name="donate")
+    async def editprofile(self, ctx):
+        """Link to our Patreon."""
+        await ctx.send("Our patreon link is https://patreon.com/FurryRefuge Help keep our community running!")
