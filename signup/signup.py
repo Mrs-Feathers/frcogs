@@ -22,4 +22,4 @@ class FRSignup(commands.Cog):
     @commands.command(name="support")
     async def support(self, ctx):
         """Deliver Invite link."""
-        await ctx.send("Support is always here to help, send an email to support@furryrefuge.com including everything you think is relivant and we will try to help!")
+        await ctx.send("!!!Support is always here to help, send an email to support@furryrefuge.com including everything you think is relivant and we will try to help!")
