@@ -2,15 +2,17 @@
     "author": [
         "Furry Refuge"
     ],
-    "name": "FR Signup Invite",
-    "install_msg": "SIGNUP API INSTALLED",
-    "description": "Get invited to make an FR account!",
-    "short": "Get invited to make an FR account!",
+    "name": "FR Informations",
+    "install_msg": "FR INFORMATIONAL API INSTALLED",
+    "description": "Various informational commands.",
+    "short": "Various informational commands.",
     "hidden": false,
     "min_bot_version": "3.5.3",
     "tags": [
         "signup",
-        "invite"
+        "invite",
+        "events",
+        "donate"
     ],
     "permissions": [
         "embed_links"
