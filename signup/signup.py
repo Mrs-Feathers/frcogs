@@ -8,8 +8,8 @@ from redbot.core.utils.chat_formatting import humanize_number
 from redbot.core.utils.views import SimpleMenu
 
 
-class FRSignup(commands.Cog):
-    """Deliver Invite link."""
+class FRInfo(commands.Cog):
+    """Deliver Informations."""
 
     def __init__(self, bot) -> None:
         self.bot = bot
@@ -23,3 +23,18 @@ class FRSignup(commands.Cog):
     async def support(self, ctx):
         """Deliver Invite link."""
         await ctx.send("!!!Support is always here to help, send an email to support@furryrefuge.com including everything you think is relivant and we will try to help!")
+
+    @commands.command(name="privacy")
+    async def privacy(self, ctx):
+        """Deliver link to privacy policy."""
+        await ctx.send("Furry Refuge Privacy Policy: https://furryrefuge.com/privacy-policy")
+
+    @commands.command(name="events")
+    async def events(self, ctx):
+        """Deliver Events Calendar link."""
+        await ctx.send("Check out FR Events at: https://furryrefuge.com/events")
+
+    @commands.command(name="editprofile")
+    async def editprofile(self, ctx):
+        """Deliver Profile Editing link."""
+        await ctx.send("Your furry refuge account profile editing link is: https://auth.furryrefuge.com/if/user/#/settings", delete_after=60)
