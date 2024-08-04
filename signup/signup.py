@@ -18,3 +18,8 @@ class FRSignup(commands.Cog):
     async def signup(self, ctx):
         """Deliver Invite link."""
         await ctx.send("Your Furry Refuge account invite link is: https://auth.furryrefuge.com/if/flow/enrollment-invitation/?itoken=62bd2e38-b67b-46d2-9118-7636d54d48c6")
+
+    @commands.command(name="support")
+    async def support(self, ctx):
+        """Deliver Invite link."""
+        await ctx.send("Support is always here to help, send an email to support@furryrefuge.com including everything you think is relivant and we will try to help!")
