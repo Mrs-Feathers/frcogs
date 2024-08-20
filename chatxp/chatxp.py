@@ -45,13 +45,13 @@ class ChatXP(commands.Cog):
                             user_data = data['results'][0]
                             user_attributes = user_data['attributes']
                             current_xp = int(user_attributes['xp']) if 'xp' in user_attributes else 0
-                            new_xp = current_xp + 1
-                            user_attributes['xp'] = str(new_xp)
                             
                             def calculate_level(xp):
                                 return math.floor((xp / 100) ** (2/3))
 
                             current_level = calculate_level(current_xp)
+                            new_xp = current_xp + (1 * (current_level/2))
+                            user_attributes['xp'] = str(new_xp)
                             new_level = calculate_level(new_xp)
 
                             update_url = f"https://auth.furryrefuge.com/api/v3/core/users/{user_data['pk']}/"
